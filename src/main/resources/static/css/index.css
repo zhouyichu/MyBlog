@@ -1,4 +1,11 @@
 body{
 	background-color:#364150;
 	color:#fff;
+	margin:0;
+	padding:0
 }
+// set the fallback-cover image
+$vdg-fallback-image: url('static/images/fallback.jpg');
+
+// import package
+@import '~vidage/src/styles/vidage';

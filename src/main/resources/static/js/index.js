@@ -1,6 +1,7 @@
 $(function(){
 	console.log("hello, It's MyBlog. Welcome you!");
 	changeIcon();
+	new Vidage('#vidage');
 });
 
 /**
