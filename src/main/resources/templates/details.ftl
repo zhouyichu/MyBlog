@@ -3,24 +3,24 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta charset="UTF-8">
-		<title>Welcome to MyBlog</title>
-		<link id="link-icon" rel="shortcut icon" href="static/image/MyBlog-logo-black.png" type="image/x-icon">
-		<link href="static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
-		<link href="static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/css/index.css" rel="stylesheet" type="text/css" />
+		<title>文章详情</title>
+		<link id="link-icon" rel="shortcut icon" href="${request.contextPath}/static/image/MyBlog-logo-black.png" type="image/x-icon">
+		<link href="${request.contextPath}/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/css/details.css" rel="stylesheet" type="text/css" />
 		
-	    <script type="text/javascript" src="static/jQuery.js"></script>
-	    <script type="text/javascript" src="static/plugins/bootstrap/js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="static/plugins/vidage/vidage.js"></script>
-	    <script type="text/javascript" src="static/js/index.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/jQuery.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
 	</head>
 	<body>
 		<!-- begin background void -->
 		<div class="vidage">
 		  <video id="vidage" class="vidage-video" preload="metadata" loop autoplay muted>
-		    <source src="static/media/indexbg.mp4" type="video/mp4">
+		    <source src="${request.contextPath}/static/media/indexbg.mp4" type="video/mp4">
 		  </video>
 		</div>
 		<!-- end background void -->
@@ -37,7 +37,6 @@
 		    </ul>
 		</div>
 		<!-- end navigation bar -->
-		
 		<div class="container-fluid">
 			<div class="row">
 				<!-- begin profile -->
@@ -46,11 +45,10 @@
 						<div class="blog-quote bordered blog-container">
 	                        <div class="blog-quote-label bg-green-jungle">
 	                            <i class="fa fa-quote-left"></i>从事Java web全栈开发四年，玩转RESTful风格的API接口开发，熟练Spring家族框架，熟悉微服务架构......
-	                            
 	                        </div>
 	                        <div class="blog-quote-avatar">
 	                            <a href="javascript:;">
-	                                <img src="static/image/handimage.jpg">
+	                                <img src="${request.contextPath}/static/image/handimage.jpg">
 	                            </a>
 	                        </div>
 	                        <div class="blog-quote-author">
@@ -99,41 +97,66 @@
 				</div>
 				<!-- end profile -->
 				<!-- begin content -->
-				<div class="col-md-6 blog-content">
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-					<nav aria-label="...">
-					  <ul class="pager">
-					    <li><a href="#">上一页</a></li>
-					    <li><a href="#">下一页</a></li>
-					  </ul>
-					</nav>
+				<div class="col-md-6 blog-content-2">
+	                <div class="blog-single-content bordered blog-container">
+                        <div class="blog-single-head">
+                            <h1 class="blog-single-head-title">SpringCloud简介与五个常用组件</h1>
+                            <div class="blog-single-head-date">
+                                <a href="javascript:;">阅读数：<span>3165</span></a>
+                                <a href="javascript:;">&nbsp;&nbsp;发布时间：<span>2019-05-23 22:45:23</span></a>
+                            </div>
+                        </div>
+                        <div class="blog-single-img">
+                            <img src="${request.contextPath}/static/image/article-details-banner.jpg">
+                        </div>
+                        <div class="blog-single-desc">
+                            <!-- Content in there -->
+                        </div>
+                        <div class="blog-single-foot">
+                            <ul class="blog-post-tags">
+                                <li class="uppercase">
+                                    <a href="javascript:;">Bootstrap</a>
+                                </li>
+                                <li class="uppercase">
+                                    <a href="javascript:;">Sass</a>
+                                </li>
+                                <li class="uppercase">
+                                    <a href="javascript:;">HTML</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="blog-comments">
+                            <h3 class="sbold blog-comments-title">Comments(30)</h3>
+                            <div class="c-comment-list">
+								<div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" alt="" src="../assets/pages/img/avatars/team7.jpg"> </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            <a href="#">Nick Nilson</a> on
+                                            <span class="c-date">30 May 2015, 9:40PM</span>
+                                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
+                                    </div>
+                                </div>
+                            </div>
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Name" class="form-control c-square"> </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Email" class="form-control c-square"> </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Website" class="form-control c-square"> </div>
+                                <div class="form-group">
+                                    <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 				</div>
 				<div class="col-md-2">
 					<div class="portlet box bulletin">
@@ -186,6 +209,6 @@
 				<p>Powered by .NET Core on Kubernetes</p>
 		    </div>
 		</div>
-		<!-- end foot -->
+		<!-- end foot -->		
 	</body>
 </html>

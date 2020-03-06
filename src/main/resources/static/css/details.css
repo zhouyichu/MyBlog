@@ -47,14 +47,8 @@ body{
 .blog-content-1 .blog-quote>.blog-quote-author>.blog-quote-desc{
 	color:#fff;
 }
-.blog-content>.portlet>.content-title{
-	background: #ffffff4a !important;
-    padding: 10px;
-    color: #FFF;
-}
-.blog-content>.margin-top-20{
-	font-size:16px;
-}
+
+
 .content-create-time{
 	text-align:right;
 }
