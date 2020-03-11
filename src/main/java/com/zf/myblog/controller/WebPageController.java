@@ -10,4 +10,19 @@ public class WebPageController {
 	public String index() {
 		return "index";
 	}
+	
+	@RequestMapping(value = "/message")
+	public String message() {
+		return "message";
+	}
+	
+	@RequestMapping(value = "/aboutme")
+	public String aboutme() {
+		return "aboutme";
+	}
+	
+	@RequestMapping(value = "/cooperate")
+	public String cooperate() {
+		return "cooperate";
+	}
 }

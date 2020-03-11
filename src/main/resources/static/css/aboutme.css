@@ -1,0 +1,79 @@
+/**
+ * 毛玻璃效果
+ */
+body{
+	background-color:#fff;
+	color:#fff;
+	margin:0;
+	padding:0;
+	z-index:1;
+}
+body:after{
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000007a;
+    z-index: -1;
+}
+
+/**
+ * 导航栏
+ */
+.nav>li{
+	margin:5px 10px;
+	font-size:15px;
+}
+.nav>li>a{
+	color:#FFF;
+}
+.nav>li>a:hover,.nav>li>a:visited,.nav>li>a:active,.nav>li>a:focus{
+	background:none !important;
+}
+.navbar-collapse{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-collapse>.navbar-nav{
+	display: inline-block;
+	float: none;
+	margin-top:2em;
+}
+.navbar-static-bottom{
+	text-align: center;
+	margin-top:20px;
+	padding-bottom:20px !important;
+}
+.navbar-static-bottom>.navbar-nav{
+	display: inline-block;
+	float: none;
+}
+
+/**
+ * About me 内容
+ */
+.about-header{
+	text-align:center !important;
+}
+.about-body{
+	margin-top:10em;
+}
+.profile-me{
+	border:1px solid;
+	padding:15px;
+}
+.portlet-skill.portlet.light{
+	margin-top:5em;
+	background-color:#ffffff03;
+}
+.caption-subject.sbold{
+	color:#FFF;
+}
+.tiles .tile{
+	border:none;
+}
+.tiles .tile:hover{
+	border:none;
+}
