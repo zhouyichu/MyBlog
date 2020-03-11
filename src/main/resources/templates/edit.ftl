@@ -3,18 +3,30 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta charset="UTF-8">
-		<title>文章详情</title>
+		<title>编辑文章</title>
 		<link id="link-icon" rel="shortcut icon" href="${request.contextPath}/static/image/MyBlog-logo-black.png" type="image/x-icon">
 		<link href="${request.contextPath}/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/css/details.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/css/edit.css" rel="stylesheet" type="text/css" />
 		
 	    <script type="text/javascript" src="${request.contextPath}/static/jQuery.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/js/bootstrap.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/lang/summernote-zh-CN.min.js" type="text/javascript"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/js/edit.js"></script>
 	</head>
 	<body>
 		<!-- begin background void -->
@@ -97,62 +109,60 @@
 				</div>
 				<!-- end profile -->
 				<!-- begin content -->
-				<div class="col-md-6 blog-content-2">
-	                <div class="blog-single-content bordered blog-container">
-                        <div class="blog-single-head">
-                            <h1 class="blog-single-head-title">SpringCloud简介与五个常用组件</h1>
-                            <div class="blog-single-head-date">
-                                <a href="javascript:;">阅读数：<span>3165</span></a>
-                                <a href="javascript:;">&nbsp;&nbsp;发布时间：<span>2019-05-23 22:45:23</span></a>
-                            </div>
-                        </div>
-                        <div class="blog-single-img">
-                            <img src="${request.contextPath}/static/image/article-details-banner.jpg">
-                        </div>
-                        <div class="blog-single-desc">
-                            <!-- Content in there -->
-                        </div>
-                        <div class="blog-single-foot">
-                            <ul class="blog-post-tags">
-                                <li>
-                                    <a href="javascript:;"><span class="label label-default">BootStrap</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;"><span class="label label-default">SpringBoot</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;"><span class="label label-default">MyBatis</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="blog-comments">
-                            <h3 class="sbold blog-comments-title">Comments(30)</h3>
-                            <div class="c-comment-list">
-								<div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" alt="" src="../assets/pages/img/avatars/team7.jpg"> </a>
+				<div class="col-md-6">
+					<div class="portlet light form-fit bordered">
+                        <div class="portlet-body form">
+                            <form class="form-horizontal form-bordered">
+                                <div class="form-body">
+                                	<div class="form-group">
+                                        <label class="control-label col-md-2">标题</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="请输入文章标题"  maxlength="10"/>
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="#">Nick Nilson</a> on
-                                            <span class="c-date">30 May 2015, 9:40PM</span>
-                                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
+                                	<div class="form-group">
+                                        <label class="control-label col-md-2">摘要</label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" maxlength="500" id="summary" rows="3" placeholder="请输入文章摘要"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">正文</label>
+                                        <div class="col-md-10">
+                                            <div name="summernote" id="summernote">请在此处输入内容......</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-2">标签</label>
+                                        <div class="col-md-6">
+                                            <input type="text" value="" id="object_tagsinput">
+                                            <div class="margin-top-10">
+                                                <input type="text" class="form-control input-large" placeholder="Tag value" id="object_tagsinput_value"> </div>
+                                            <div class="margin-top-10">
+                                                <select class="form-control input-large" id="object_tagsinput_continent">
+                                                    <option value="America">Continent...</option>
+                                                    <option value="America">America</option>
+                                                    <option value="Europe">Europe</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="Africa">Africa</option>
+                                                    <option value="Asia">Asia</option>
+                                                </select>
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <input type="text" class="form-control input-large" placeholder="City" id="object_tagsinput_city"> </div>
+                                            <div class="margin-top-10">
+                                                <a href="javascript:;" class="btn red" id="object_tagsinput_add">Add tag</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Name" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Email" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Website" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <button type="submit" class="btn green">保存</button>
+                                            <button type="button" class="btn default">取消</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>

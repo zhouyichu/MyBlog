@@ -1,0 +1,116 @@
+body{
+	background-color:#364150;
+	color:#fff;
+	margin:0;
+	padding:0
+}
+.nav>li{
+	margin:5px 10px;
+	font-size:15px;
+}
+.nav>li>a{
+	color:#FFF;
+}
+.nav>li>a:hover,.nav>li>a:visited,.nav>li>a:active,.nav>li>a:focus{
+	background:none !important;
+}
+.navbar-collapse{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-collapse>.navbar-nav{
+	display: inline-block;
+	float: none;
+	margin-top:2em;
+}
+.navbar-static-bottom{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-static-bottom>.navbar-nav{
+	display: inline-block;
+	float: none;
+}
+
+.blog-content-1 .blog-quote>.blog-quote-label{
+	font-size:15px;
+	padding:15px 20px;
+	padding-bottom:80px;
+}
+
+.bg-green-jungle {
+    background: #f2f5f440 !important;
+}
+.blog-content-1 .blog-quote{
+	background-color: #ffffff42;
+}
+.blog-content-1 .blog-quote>.blog-quote-author>.blog-quote-desc{
+	color:#fff;
+}
+
+.portlet.light {
+    background-color: #ffffff54;
+}
+.portlet.box{
+	background:#ffffff54;
+}
+.portlet.box.bulletin>.portlet-body{
+	text-align:center;
+	background-color: #ffffff54;
+}
+.portlet.box.new-article>.portlet-body{
+	padding:0px;
+	color:#a2acb8;
+}
+.portlet.box.read-board>.portlet-body{
+	padding:0px;
+	color:#a2acb8;
+	background-color: #88999e59;
+}
+.bulletin-create-time{
+	text-align:right;
+	margin-bottom:0px;
+	margin-top:20px !important;
+}
+
+.pager li>a,.pager li>a:hover,.pager li>a:focus{
+	background-color: #ffffff4f;
+	color:#FFF;
+	border:none;
+}
+.pager li>a:hover{
+	background-color: #ffffff29;
+}
+.portlet.box>.portlet-body{
+	background-color:#fff0;
+}
+.list-group-item{
+	background-color:#ffffff40;
+	border:none;
+	border-top: 1px solid #ddd;
+}
+.list-group-item>a{
+	color:#ffffffb5;
+}
+
+/**
+工作经验
+*/
+.portlet.bordered.work-exp{
+	margin-top:25px;
+	border:none !important;
+}
+.portlet.bordered.work-exp>.portlet-body{
+	background-color:#ffffff54;
+}
+.work-exp>.portlet-body>.scroller{
+	border:1px solid;
+	padding:5px;
+	margin-top:15px;
+}
+
+// set the fallback-cover image
+$vdg-fallback-image: url('static/images/fallback.jpg');
+
+// import package
+@import '~vidage/src/styles/vidage';
