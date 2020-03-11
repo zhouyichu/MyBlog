@@ -109,6 +109,10 @@ body{
 	margin-top:15px;
 }
 
+.bootstrap-tagsinput{
+	width:100%;
+}
+
 // set the fallback-cover image
 $vdg-fallback-image: url('static/images/fallback.jpg');
 

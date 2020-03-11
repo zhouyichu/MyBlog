@@ -4,6 +4,7 @@ $(function(){
 	$('#summary').maxlength({
 		alwaysShow: true
 	});
+	$('#typeahead').tagsinput();
 });
 
 /**组件编辑器 */
