@@ -74,73 +74,183 @@
                         </div>
                         <div class="portlet-body">
                             <div class="tiles">
-                                <div class="tile double-down bg-blue-hoki">
-                                    <div class="tile-body">
-                                    	<!--<img src="static/image/handimage.jpg" alt="" height="100%">-->
-                                    </div>
-                                    <div class="tile-object">
-                                        <h3>Java</h3>
+                                <div class="tile double-down">
+                                    <div class="tile-body front">
+                                    	<img src="static/image/kafka.jpg" alt="Kafka">
                                     </div>
                                 </div>
-                                <div class="tile bg-red-sunglo">
+                                <div class="tile">
                                     <div class="tile-body">
-                                    	<h2>Status</h2>
+                                    	<img src="static/image/java.jpg" alt="java">
                                     </div>
                                 </div>
-                                <div class="tile double selected bg-green-turquoise">
+                                <div class="tile double">
                                     <div class="tile-body">
-                                    	<h2>Hibernate</h2>
+                                    	<img src="static/image/hibernate.jpg" alt="Hibernate">
                                     </div>
                                 </div>
-                                <div class="tile selected bg-yellow-saffron">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>MyBatis</h2>
+                                    	<img src="static/image/mybatis.jpg" alt="MyBatis">
                                     </div>
                                 </div>
-                                <div class="tile double bg-blue-madison">
+                                <div class="tile double">
                                     <div class="tile-body">
-                                        <h2>SpringCloud</h2>
+                                    	<img src="static/image/spring-cloud.jpg" alt="SpringCloud">
                                     </div>
                                 </div>
-                                <div class="tile bg-purple-studio">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/oracle.jpg" alt="Oracle">
                                     </div>
                                 </div>
-                                <div class="tile bg-yellow-casablanca">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>JQuery</h2>
+                                    	<img src="static/image/jquery.jpg" alt="jQuery">
                                     </div>
                                 </div>
-                                <div class="tile bg-green-meadow">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/nginx.jpg" alt="Nginx">
                                     </div>
                                 </div>
-                                <div class="tile double bg-grey-cascade">
+                                <div class="tile double">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/spring-boot.jpg" alt="SpringBoot">
                                     </div>
                                 </div>
-                                <div class="tile bg-red-intense">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/docker.jpg" alt="Docker">
                                     </div>
                                 </div>
-                                <div class="tile bg-green">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/jenkins.jpg" alt="Jenkins">
                                     </div>
                                 </div>
-                                <div class="tile bg-blue-steel">
+                                <div class="tile">
                                     <div class="tile-body">
-                                        <h2>Oracle</h2>
+                                    	<img src="static/image/elasticsearch.jpg" alt="elasticsearch">
+                                    </div>
+                                </div>
+                                <div class="tile double">
+                                    <div class="tile-body">
+                                    	<img src="static/image/mongodb.jpg" alt="MongoDB">
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile-body">
+                                    	<img src="static/image/redis.jpg" alt="Redis">
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile-body">
+                                    	<img src="static/image/hadoop.jpg" alt="Hadoop">
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile-body">
+                                    	<img src="static/image/bootstrap.jpg" alt="BootStrap">
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile-body">
+                                    	<img src="static/image/mysql.jpg" alt="MySql">
+                                    </div>
+                                </div>
+                                <div class="tile double">
+                                    <div class="tile-body">
+                                    	<img src="static/image/sql-server.jpg" alt="Sql Server">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="portlet light portlet-fit bordered portlet-course">
+                        <div class="portlet-body">
+                            <div class="mt-timeline-2">
+                                <div class="mt-timeline-line border-grey-steel"></div>
+                                <ul class="mt-container">
+                                    <li class="mt-item">
+                                        <div class="mt-timeline-icon bg-red bg-font-red border-grey-steel">
+                                        	<p class="mt-icon-font">1 年</p>
+                                        </div>
+                                        <div class="mt-timeline-content">
+                                            <div class="mt-content-container">
+                                                <div class="mt-title">
+                                                    <h3 class="mt-content-title">印孚瑟斯技术(中国)有限公司</h3>
+                                                </div>
+                                                <div class="mt-author">
+                                                    <div class="mt-avatar">
+                                                        <img src="static/image/infosys.jpg">
+                                                    </div>
+                                                    <div class="mt-author-name">
+                                                        <h5>Java开发工程师</h5>
+                                                    </div>
+                                                    <div class="mt-author-notes">2018-10 To 2019-11</div>
+                                                </div>
+                                                <div class="mt-content border-grey-salt">
+                                                    <p>在职期间从事华为云平台监控任务，使用granafa做数据可视化</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-item">
+                                        <div class="mt-timeline-icon bg-blue bg-font-blue border-grey-steel">
+                                            <p class="mt-icon-font">3 年</p>
+                                        </div>
+                                        <div class="mt-timeline-content">
+                                            <div class="mt-content-container border-grey-steel">
+                                                <div class="mt-title">
+                                                    <h3 class="mt-content-title">软通动力信息技术有限公司</h3>
+                                                </div>
+                                                <div class="mt-author">
+                                                	<div class="mt-avatar">
+                                                        <img src="static/image/ruantong.jpg">
+                                                    </div>
+                                                    <div class="mt-author-name">
+                                                        <h5>中级Java开发工程师</h5>
+                                                    </div>
+                                                    <div class="mt-author-notes">2015-10 To 2018-10</div>
+                                                </div>
+                                                <div class="mt-content border-grey-steel">
+                                                    <p>在软通动力的四部，从事华为外包的工作，参与华为工具云项目组。开发了众多云端API服务，如PDF分割解密加密去水印合并、数字签名服务、URL转图片服务、币种转换服务......,还参与ADP应用快速开发平台的开发。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mt-item">
+                                        <div class="mt-timeline-icon bg-green-turquoise bg-font-green-turquoise border-grey-steel">
+                                        	<p class="mt-icon-font">7个月</p>
+                                        </div>
+                                        <div class="mt-timeline-content">
+                                            <div class="mt-content-container">
+                                                <div class="mt-title">
+                                                    <h3 class="mt-content-title">深圳市桑椹电子商务有限公司</h3>
+                                                </div>
+                                                <div class="mt-author">
+                                                    <div class="mt-avatar">
+                                                        <img src="static/image/suncent.jpg">
+                                                    </div>
+                                                    <div class="mt-author-name">
+                                                        <h5>Java软件开发工程师</h5>
+                                                    </div>
+                                                    <div class="mt-author-notes">2019-07 To 至今</div>
+                                                </div>
+                                                <div class="mt-content border-grey-salt">
+                                                    <p>桑椹电子是一个跨境电子商务公司，主要是在Amazon上卖车灯的。在职期间工作内容包括打通Amazon MWS后台接口，以便高效对接Amazon，基于Amazon ACES服务，开发自动上传产品信息和获取产品报告功能，公司ERP系统的开发、产品申报流程开发等一系列工作。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 				</div>
+				
 			</div>
 		</div>
 		<!-- end content -->
