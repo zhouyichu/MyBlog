@@ -1,7 +1,7 @@
 body{
 	position:absolute;
 	color:#fff;
-	background-image:url("../image/download-bg.jpg");
+	background-image:url("../image/fallback.jpg");
 	z-index:-2;
 	background-attachment: fixed;
 }
