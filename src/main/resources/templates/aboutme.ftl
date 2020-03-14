@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta charset="UTF-8">
-		<title>Welcome to MyBlog</title>
+		<title>关于我|about me</title>
 		<link id="link-icon" rel="shortcut icon" href="static/image/MyBlog-logo-black.png" type="image/x-icon">
 		<link href="static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
@@ -29,7 +29,7 @@
 		    </ul>
 		</div>
 		<!-- end navigation bar -->
-		
+		<!-- begin content -->
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 about-header">

@@ -1,0 +1,168 @@
+body{
+	position:absolute;
+	color:#fff;
+	background-image:url("../image/download-bg.jpg");
+	z-index:-2;
+	background-attachment: fixed;
+}
+body:after{
+	content: '';
+	position:absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background-color:#55555569;
+	z-index:-1;
+}
+
+/**
+ * 导航栏
+ */
+.nav>li{
+	margin:5px 10px;
+	font-size:15px;
+}
+.nav>li>a{
+	color:#FFF;
+}
+.nav>li>a:hover,.nav>li>a:visited,.nav>li>a:active,.nav>li>a:focus{
+	background:none !important;
+}
+.navbar-collapse{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-collapse>.navbar-nav{
+	display: inline-block;
+	float: none;
+	margin-top:2em;
+}
+.navbar-static-bottom{
+	text-align: center;
+	margin-top:20px;
+	padding-bottom:20px !important;
+}
+.navbar-static-bottom>.navbar-nav{
+	display: inline-block;
+	float: none;
+}
+
+
+/**
+ * 搜索框
+ */
+.portlet.light{
+	background-color:transparent;
+}
+.mt-radio{
+	margin-bottom:0px;
+}
+.download-search,.download-search .form-body{
+	padding:0px;
+}
+.btn-search{
+	border-color:#fff;
+	background-color:transparent;
+}
+.btn,.btn-search:hover{
+	color:#fff;
+}
+.btn,.btn-search:visited{
+	color:#fff !important;
+}
+
+
+/**
+ * 内容展示
+ */
+.m-heading-1{
+	background-color:transparent;
+}
+.m-heading-1.m-bordered{
+	padding:10px;
+}
+.dl-horizontal{
+	margin-bottom:0px;
+}
+.dl-horizontal>dt>a{
+	color:#ffffffa1;
+	font-size:65px;
+	
+}
+.dl-horizontal>dt>a:hover{
+	color:#fff;
+}
+.dl-horizontal>dd>h4>a,.m-heading-1>p{
+	color:#fff;
+}
+.dl-horizontal>dd>h4>a:hover{
+	color:#FFF;
+	text-decoration:none;
+}
+.dl-horizontal>dd>p{
+	margin-bottom:10px;
+}
+.dl-horizontal .content-foot .list-inline{
+	margin-bottom:0px;
+}
+.border-after-white:after, .border-before-white:before, .border-white{
+	border-color: #ffffff73!important;
+}
+.m-heading-1.dl-horizontal.m-bordered{
+	padding:10px;
+}
+.dl-horizontal dt{
+	width:56px;
+}
+
+.dl-horizontal dd{
+	margin-left:70px;
+}
+.content-foot{
+    font-size: x-small;
+}
+
+/**
+ * 分页按钮组
+ */
+.btn-toolbar{
+	margin:0px auto;
+	width:430px;
+}
+.btn-paging .btn-default{
+	background-color:transparent;
+	border:1px solid #fff;
+	color:#fff;
+}
+.btn-paging .btn-default:hover{
+	background-color:#ffffff73;
+	border:1px solid #fff;
+	color:#fff;
+}
+
+/**
+ * 资源标签
+ */
+.hot-res-tag{
+	border:1px solid #fff;
+	padding:10px;
+}
+.hot-res-tag .label-info{
+	margin: 5px;
+    display: inline-block;
+    line-height: 20px;
+	background-color:#ffffff47;
+}
+.res-dt{
+	padding:10px;
+	border:1px solid #fff;
+}
+.list-group-item{
+	background-color:transparent;
+	border:none;
+	border-bottom:1px solid #fff;
+}
+.list-group-item>a{
+	color:#FFF;
+}

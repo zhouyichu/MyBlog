@@ -25,4 +25,9 @@ public class WebPageController {
 	public String cooperate() {
 		return "cooperate";
 	}
+	
+	@RequestMapping(value = "/download")
+	public String download() {
+		return "download";
+	}
 }
