@@ -6,13 +6,17 @@
 		<title>文章详情</title>
 		<link id="link-icon" rel="shortcut icon" href="${request.contextPath}/static/image/MyBlog-logo-black.png" type="image/x-icon">
 		<link href="${request.contextPath}/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/page/blog.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/css/details.css" rel="stylesheet" type="text/css" />
 		
 	    <script type="text/javascript" src="${request.contextPath}/static/jQuery.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
 	</head>
@@ -100,59 +104,55 @@
 				<div class="col-md-6 blog-content-2">
 	                <div class="blog-single-content bordered blog-container">
                         <div class="blog-single-head">
-                            <h1 class="blog-single-head-title">SpringCloud简介与五个常用组件</h1>
+                            <h1 class="blog-single-head-title">${artVO.title}</h1>
                             <div class="blog-single-head-date">
-                                <a href="javascript:;">阅读数：<span>3165</span></a>
-                                <a href="javascript:;">&nbsp;&nbsp;发布时间：<span>2019-05-23 22:45:23</span></a>
+                                <a href="javascript:;">阅读数：<span>${artVO.readTime}</span></a>
+                                <a href="javascript:;">&nbsp;&nbsp;发布时间：<span>${artVO.createTime}</span></a>
+                                <input type="hidden" value="${artVO.articleId}" id="artId"/>
                             </div>
                         </div>
-                        <div class="blog-single-img">
+                        <!--<div class="blog-single-img">
                             <img src="${request.contextPath}/static/image/article-details-banner.jpg">
-                        </div>
+                        </div>-->
                         <div class="blog-single-desc">
-                            <!-- Content in there -->
+                            ${artVO.content}
                         </div>
                         <div class="blog-single-foot">
                             <ul class="blog-post-tags">
+                            	<#list tagArr as tag>
                                 <li>
-                                    <a href="javascript:;"><span class="label label-default">BootStrap</span></a>
+                                    <a href="javascript:;"><span class="label label-default">${tag}</span></a>
                                 </li>
-                                <li>
-                                    <a href="javascript:;"><span class="label label-default">SpringBoot</span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;"><span class="label label-default">MyBatis</span></a>
-                                </li>
+                                </#list>
                             </ul>
                         </div>
                         <div class="blog-comments">
-                            <h3 class="sbold blog-comments-title">Comments(30)</h3>
+                            <h3 class="sbold blog-comments-title">评论数(${commSize})</h3>
                             <div class="c-comment-list">
+                            	<#list commList as comm>
 								<div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" alt="" src="../assets/pages/img/avatars/team7.jpg"> </a>
-                                    </div>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-                                            <a href="#">Nick Nilson</a> on
-                                            <span class="c-date">30 May 2015, 9:40PM</span>
-                                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
+                                            <a href="#">${comm.account}</a>
+                                            <span class="c-date">${comm.createTime}</span>
+                                        </h4>
+                                        <p>${comm.content}</p>
                                     </div>
                                 </div>
+                                </#list>
                             </div>
-                            <form action="#">
+                            <form role="form" id="commForm">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Your Name" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Email" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Your Website" class="form-control c-square"> </div>
-                                <div class="form-group">
-                                    <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
+                                    <input type="text" placeholder="用户名" class="form-control c-square" id="account" name="account">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
+                                    <input type="text" placeholder="邮箱地址" class="form-control c-square" id="email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea rows="8" id="content" name="content" maxlength="300" placeholder="您可以在这儿写下你的留言..." class="form-control c-square"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn blue uppercase btn-md sbold btn-block" id="submitComm">提交</button>
                                 </div>
                             </form>
                         </div>

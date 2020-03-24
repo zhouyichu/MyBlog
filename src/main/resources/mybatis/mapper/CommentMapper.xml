@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zf.myblog.mapper.CommentMapper">
+	<!-- 查询评论表字段 -->
+	<sql id="queryCommField">
+		select  c.com_id as comId,
+				c.article_id as artId,
+				c.account as account,
+				c.email as email,
+				c.com_content as content,
+				c.create_time as createTime,
+				c.status as status
+			from
+				myblog_comment c
+	</sql>
+
+	<!-- 通过文章ID查询评论 -->
+	<select id="queryCommByArtId" resultType="com.zf.myblog.entity.CommentVO">
+		<include refid="queryCommField" />
+		<where>
+			<if test="artId!=null and artId!=''">
+				c.article_id = #{artId}
+			</if>
+		</where>
+		order by c.create_time desc
+	</select>
+	
+	
+	<!-- 新增评论 -->
+	<insert id="insertComm">
+		INSERT INTO myblog_comment (
+			com_id, article_id, account, email, com_content, create_time, status
+		)VALUES(
+			#{commId},#{artId},#{account},#{email},#{content},sysdate(),0
+		)
+	</insert>
+</mapper>

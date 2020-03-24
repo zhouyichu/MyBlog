@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zf.myblog.mapper.ArticleMapper">
+	<!-- 查询文章表字段 -->
+	<sql id="queryArticleField">
+		select
+		articleId as articleId,
+		title as title,
+		intro as intro,
+		content as content,
+		tags as tags,
+		read_time as readTime,
+		create_time as createTime
+		from
+		myblog_article
+	</sql>
+
+	<!-- 文章分页查询 -->
+	<select id="articlePage" resultType="com.zf.myblog.entity.ArticleVO">
+		<include refid="queryArticleField" />
+		order by create_time desc
+	</select>
+
+	<!-- 文章按标签分页查询 -->
+	<select id="articlePageByTag"
+		resultType="com.zf.myblog.entity.ArticleVO">
+		<include refid="queryArticleField" />
+		<where>
+			<if test="tag!=null and tag!=''">
+				tags like CONCAT('%',#{tag},'%')
+			</if>
+		</where>
+		order by create_time desc
+	</select>
+	
+	<!-- 通过ID查询文章 -->
+	<select id="getArtById" resultType="com.zf.myblog.entity.ArticleVO">
+		<include refid="queryArticleField" />
+		where articleId = #{artId}
+	</select>
+</mapper>

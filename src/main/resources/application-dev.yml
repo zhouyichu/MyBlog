@@ -1,7 +1,7 @@
 # 数据源配置
 spring:
     datasource:
-        url: jdbc:mysql://localhost:3306/suncent_ram?autoReconnect=true&useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useLegacyDatetimeCode=false&useJDBCCompliantTimezoneShift=true&allowMultiQueries=true
+        url: jdbc:mysql://localhost:3306/myblog?autoReconnect=true&useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useLegacyDatetimeCode=false&useJDBCCompliantTimezoneShift=true&allowMultiQueries=true
         username: root
         password: suncent_mysql321
         type: com.alibaba.druid.pool.DruidDataSource
@@ -59,11 +59,3 @@ server:
 mybatis:
     config-location: classpath:mybatis/mybatis-config.xml
     mapper-locations: classpath:mybatis/mapper/*.xml
-
-#Show Sql
-logging:
-    level:
-        com:
-            suncent:
-                oasys:
-                   mapper: debug

@@ -47,16 +47,23 @@ body{
 .blog-content-1 .blog-quote>.blog-quote-author>.blog-quote-desc{
 	color:#fff;
 }
-.blog-content>.portlet>.content-title{
+#blog-content>.portlet>.content-title{
 	background: #ffffff4a !important;
     padding: 10px;
     color: #FFF;
 }
-.blog-content>.margin-top-20{
+#blog-content>.portlet>.content-title>a{
+	color:#fff;
+	text-decoration:none;
+}
+#blog-content>.margin-top-20{
 	font-size:16px;
 }
-.content-create-time{
+.content-foot>.list-inline{
 	text-align:right;
+}
+.content-foot>.list-inline>li{
+	margin-right:15px;
 }
 .portlet.light {
     background-color: #ffffff54;
@@ -101,6 +108,10 @@ body{
 }
 .list-group-item>a{
 	color:#ffffffb5;
+}
+.bottom-info{
+	text-align: center;
+	display:none;
 }
 
 /**

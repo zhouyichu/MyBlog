@@ -48,7 +48,24 @@ body{
 	color:#fff;
 }
 
-
+.blog-single-desc,.blog-comments{
+	color:#4e5a64;
+}
+.c-comment-list>.media{
+	border-bottom:1px dashed #9a9ea2;
+}
+.c-comment-list>.media>.media-body{
+	padding-bottom:15px;
+}
+.blog-content-2 .blog-single-content .blog-comments .c-comment-list .media{
+	margin:20px 0;
+}
+.blog-comments>.c-comment-list>.media>.media-body>p{
+	margin:0px;
+}
+.blog-content-2 .blog-single-content .blog-comments .c-comment-list{
+	margin-bottom:15px;
+}
 .content-create-time{
 	text-align:right;
 }
@@ -118,3 +135,23 @@ $vdg-fallback-image: url('static/images/fallback.jpg');
 // import package
 @import '~vidage/src/styles/vidage';
 
+
+
+/**
+ * 优化校验样式
+ */
+.blog-content-2 .blog-single-content .blog-comments i{
+	position: absolute !important;
+    top: 8px;
+}
+
+
+/**
+ * 弹框字体颜色修改
+ */
+.sweet-alert>h2{
+	color:#000000;
+}
+.btn-primary{
+	background-color:#1c699f;
+}

@@ -100,40 +100,18 @@
 				<!-- end profile -->
 				<!-- begin content -->
 				<div class="col-md-6 blog-content">
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-	                <div class="portlet light content-submodel">
-	                    <h4 class="content-title">SpringCloud简介与常用五大组件</h4>
-	                    <p class="content-gist">springcloud是微服务架构的集大成者，将一系列优秀的组件进行了整合。基于springboot构建，对我们熟悉spring的程序员来说，上手比较容易。</p>
-	                    <div class="content-foot">
-	                        <p class="content-create-time">2019-03-25 18:34:56</p>
-	                    </div>
-	                </div>
-					<nav aria-label="...">
-					  <ul class="pager">
-					    <li><a href="#">上一页</a></li>
-					    <li><a href="#">下一页</a></li>
-					  </ul>
-					</nav>
+					<div id="blog-content">
+						<#list data as item>
+		                <div class="portlet light content-submodel">
+		                    <h4 class="content-title"><a href="article/details?articleId=${item.articleId}" target="_blank">${item.title}</a></h4>
+		                    <p class="content-gist">${item.content}</p>
+		                    <div class="content-foot">
+		                        <ul class="list-inline"><li>阅读数：${item.readTime}</li><li>发布时间：${item.createTime}</li>
+		                    </div>
+		                </div>
+		                </#list>
+					</div>
+					<p class="bottom-info">我是有底线的~^_^~</p>
 				</div>
 				<div class="col-md-2">
 					<div class="portlet box bulletin">

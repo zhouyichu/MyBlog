@@ -1,13 +1,24 @@
 package com.zf.myblog.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.github.pagehelper.PageInfo;
+import com.zf.myblog.entity.ArticleVO;
+import com.zf.myblog.service.ArticleService;
 
 @Controller
 public class WebPageController {
 
+	@Autowired
+	private ArticleService articleService;
+	
 	@RequestMapping(value = "/")
-	public String index() {
+	public String index(Model model) {
+		PageInfo<ArticleVO> pageInfo = articleService.articlePage(1, 10);
+		model.addAttribute("data", pageInfo.getList());
 		return "index";
 	}
 	

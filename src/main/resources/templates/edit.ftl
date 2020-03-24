@@ -119,25 +119,25 @@
                                 	<div class="form-group">
                                         <label class="control-label col-md-2">标题</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" placeholder="请输入文章标题"  maxlength="10"/>
+                                            <input type="text" class="form-control" placeholder="请输入文章标题" value="${(artVO.title)!''}"/>
                                         </div>
                                     </div>
                                 	<div class="form-group">
                                         <label class="control-label col-md-2">摘要</label>
                                         <div class="col-md-10">
-                                            <textarea class="form-control" maxlength="500" id="summary" rows="3" placeholder="请输入文章摘要"></textarea>
+                                            <textarea class="form-control" maxlength="500" id="summary" rows="3" placeholder="请输入文章摘要">${(artVO.intro)!''}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">正文</label>
                                         <div class="col-md-10">
-                                            <div name="summernote" id="summernote">请在此处输入内容......</div>
+                                            <div name="summernote" id="summernote">${(artVO.content)!'请在此处输入内容......'}</div>
                                         </div>
                                     </div>
                                     <div class="form-group last">
                                         <label class="control-label col-md-2">标签</label>
                                         <div class="col-md-10">
-                                        	<input type="text" value="" id="typeahead">
+                                        	<input type="text" value="${(artVO.tags)!''}" id="typeahead"/>
                                         </div>
                                     </div>
                                 </div>
