@@ -9,4 +9,8 @@ public interface ArticleMapper {
 	public List<ArticleVO> articlePage();
 	
 	public ArticleVO getArtById(String artId);
+	
+	public int saveArt(ArticleVO artVO);
+	
+	public int updateReadTimeById(ArticleVO artVO);
 }

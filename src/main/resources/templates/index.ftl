@@ -104,7 +104,7 @@
 						<#list data as item>
 		                <div class="portlet light content-submodel">
 		                    <h4 class="content-title"><a href="article/details?articleId=${item.articleId}" target="_blank">${item.title}</a></h4>
-		                    <p class="content-gist">${item.content}</p>
+		                    <p class="content-gist">${item.intro}</p>
 		                    <div class="content-foot">
 		                        <ul class="list-inline"><li>阅读数：${item.readTime}</li><li>发布时间：${item.createTime}</li>
 		                    </div>

@@ -39,4 +39,17 @@
 		<include refid="queryArticleField" />
 		where articleId = #{artId}
 	</select>
+	
+	
+	<insert id="saveArt">
+		INSERT INTO myblog_article (
+			articleId,title,intro,content,tags,read_time,create_time
+		)VALUES(
+			#{articleId},#{title},#{intro},#{content},#{tags},#{readTime},sysdate()
+		)
+	</insert>
+	
+	<update id="updateReadTimeById">
+		update myblog_article set read_time=#{readTime} where articleId = #{articleId}
+	</update>
 </mapper>

@@ -106,7 +106,7 @@
                         <div class="blog-single-head">
                             <h1 class="blog-single-head-title">${artVO.title}</h1>
                             <div class="blog-single-head-date">
-                                <a href="javascript:;">阅读数：<span>${artVO.readTime}</span></a>
+                                <a href="javascript:;">阅读次数：<span>${artVO.readTime}</span></a>
                                 <a href="javascript:;">&nbsp;&nbsp;发布时间：<span>${artVO.createTime}</span></a>
                                 <input type="hidden" value="${artVO.articleId}" id="artId"/>
                             </div>

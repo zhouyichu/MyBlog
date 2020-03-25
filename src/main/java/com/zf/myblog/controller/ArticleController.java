@@ -1,7 +1,7 @@
 package com.zf.myblog.controller;
 
 import java.util.List;
-
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +50,7 @@ public class ArticleController {
 	}
 	
 	/**
-	 * 编辑 and 新增文章
+	 * 编辑文章
 	 * @param model
 	 * @param articleId
 	 * @return
@@ -63,6 +63,35 @@ public class ArticleController {
 		}
 		return "edit";
 	}
+	
+	
+	/**
+	 * 新增 and 修改文章
+	 * @return
+	 */
+	@RequestMapping(value = "/save", method = { RequestMethod.POST})
+	public @ResponseBody int add(HttpServletRequest request) {
+		String title = request.getParameter("title");
+		String summary = request.getParameter("summary");
+		String content = request.getParameter("content");
+		String tags = request.getParameter("tags");
+		String artId = request.getParameter("artId");
+		String readTime = request.getParameter("readTime");
+		ArticleVO artVO = new ArticleVO();
+		artVO.setTitle(title);
+		artVO.setIntro(summary);
+		artVO.setContent(content);
+		artVO.setTags(tags);
+		if(!StringUtil.isEmpty(artId)) {
+			artVO.setArticleId(artId);
+		}
+		if(!StringUtil.isEmpty(readTime)) {
+			artVO.setReadTime(readTime);
+		}
+		int res = artService.saveArt(artVO);
+		return res;
+	}
+	
 	
 	/**
 	 * 文章列表 | 首页-无差别获取所有文章

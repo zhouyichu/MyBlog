@@ -1,6 +1,8 @@
 package com.zf.myblog.service.impl;
 
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
@@ -29,7 +31,25 @@ public class ArticleServiceImpl implements ArticleService {
 		if(StringUtil.isEmpty(artId)) {
 			return null;
 		}
+		//每获取一次，就代表阅读一次，阅读次数+1
 		ArticleVO artVO = artMapper.getArtById(artId);
+		String readTime=artVO.getReadTime();
+		int reads = Integer.parseInt(readTime);
+		reads+=1;
+		artVO.setReadTime(reads+"");
+		artMapper.updateReadTimeById(artVO);
 		return artVO;
+	}
+
+	@Override
+	public int saveArt(ArticleVO artVO) {
+		if(StringUtil.isEmpty(artVO.getArticleId())) {
+			artVO.setArticleId(UUID.randomUUID().toString());
+		}
+		if(StringUtil.isEmpty(artVO.getReadTime())) {
+			artVO.setReadTime("0");
+		}
+		int res = artMapper.saveArt(artVO);
+		return res;
 	}
 }

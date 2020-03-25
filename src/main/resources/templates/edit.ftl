@@ -14,6 +14,7 @@
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/css/edit.css" rel="stylesheet" type="text/css" />
 		
@@ -21,6 +22,8 @@
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/js/bootstrap.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
 	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js" type="text/javascript"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
 	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
 	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
 	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
@@ -114,37 +117,40 @@
 				<div class="col-md-6">
 					<div class="portlet light form-fit bordered">
                         <div class="portlet-body form">
-                            <form class="form-horizontal form-bordered">
+                            <form class="form-horizontal form-bordered" id="editForm">
+                            	<input type="hidden" name="artId" id="artId" value="${(artVO.articleId)!''}"/>
+                            	<input type="hidden" name="readTime" id="readTime" value="${(artVO.readTime)!''}"/>
+                            	<input type="hidden" name="contextPath" id="contextPath" value="${request.contextPath}"/>
                                 <div class="form-body">
                                 	<div class="form-group">
-                                        <label class="control-label col-md-2">标题</label>
+                                        <label class="control-label col-md-2">标题 <span>*</span></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" placeholder="请输入文章标题" value="${(artVO.title)!''}"/>
+                                            <input type="text" id="title" name="title" class="form-control" placeholder="请输入文章标题" value="${(artVO.title)!''}"/>
                                         </div>
                                     </div>
                                 	<div class="form-group">
-                                        <label class="control-label col-md-2">摘要</label>
+                                        <label class="control-label col-md-2">摘要 <span>*</span></label>
                                         <div class="col-md-10">
-                                            <textarea class="form-control" maxlength="500" id="summary" rows="3" placeholder="请输入文章摘要">${(artVO.intro)!''}</textarea>
+                                            <textarea class="form-control" maxlength="500" id="summary" name="summary" rows="3" placeholder="请输入文章摘要">${(artVO.intro)!''}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">正文</label>
+                                        <label class="control-label col-md-2">正文 <span>*</span></label>
                                         <div class="col-md-10">
-                                            <div name="summernote" id="summernote">${(artVO.content)!'请在此处输入内容......'}</div>
+                                            <div name="summernote" id="summernote" action="">${(artVO.content)!'请在此处输入内容......'}</div>
                                         </div>
                                     </div>
                                     <div class="form-group last">
                                         <label class="control-label col-md-2">标签</label>
                                         <div class="col-md-10">
-                                        	<input type="text" value="${(artVO.tags)!''}" id="typeahead"/>
+                                        	<input type="text" value="${(artVO.tags)!''}" id="tags" name="tags"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="col-md-12" style="text-align:center;">
-                                            <button type="submit" class="btn green">保存</button>
+                                            <button type="button" class="btn green" id="submitBtn">保存</button>
                                             <button type="button" class="btn default">取消</button>
                                         </div>
                                     </div>

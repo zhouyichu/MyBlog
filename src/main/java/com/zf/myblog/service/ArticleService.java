@@ -21,4 +21,11 @@ public interface ArticleService {
 	 * @return 文章信息对象
 	 */
 	public ArticleVO getArtById(String artId);
+	
+	/**
+	 * 保存文章
+	 * @param artVO
+	 * @return
+	 */
+	public int saveArt(ArticleVO artVO);
 }

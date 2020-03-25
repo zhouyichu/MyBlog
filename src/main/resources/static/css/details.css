@@ -47,7 +47,9 @@ body{
 .blog-content-1 .blog-quote>.blog-quote-author>.blog-quote-desc{
 	color:#fff;
 }
-
+.blog-comments{
+	width:100%;
+}
 .blog-single-desc,.blog-comments{
 	color:#4e5a64;
 }

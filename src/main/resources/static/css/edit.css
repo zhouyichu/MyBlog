@@ -72,7 +72,21 @@ body{
 	margin-bottom:0px;
 	margin-top:20px !important;
 }
-
+.modal-content{
+	color:#000;
+}
+.sweet-alert>h2{
+	color:#000;	
+}
+.has-success .control-label{
+	color:#FFF;
+}
+.has-error .control-label{
+	color:red;
+}
+.has-error .help-block{
+	color:red;
+}
 .pager li>a,.pager li>a:hover,.pager li>a:focus{
 	background-color: #ffffff4f;
 	color:#FFF;
