@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.util.StringUtil;
+import com.zf.myblog.common.MyBlogConstant;
 import com.zf.myblog.entity.ArticleVO;
 import com.zf.myblog.entity.CommentVO;
 import com.zf.myblog.service.ArticleService;
@@ -46,11 +47,30 @@ public class ArticleController {
 		List<CommentVO> commList = commService.queryCommByArtId(articleId);
 		model.addAttribute("commSize", commList.size());
 		model.addAttribute("commList", commList);
-		PageInfo<ArticleVO> pageInfo = artService.articlePage(1, 10);
+		PageInfo<ArticleVO> pageInfo = artService.articlePage(1, 10,MyBlogConstant.ARTICLE_TYPE_EXP);
 		PageInfo<ArticleVO> hotPageInfo = artService.hotTopArt(1, 5);
 		model.addAttribute("data", pageInfo.getList());
 		model.addAttribute("hotData", hotPageInfo.getList());
 		return "details";
+	}
+	
+	/**
+	 * 文章详情
+	 * @param model
+	 * @param articleId
+	 * @return
+	 */
+	@RequestMapping(value = "/mood/details", method = RequestMethod.GET)
+	public String moodDetails(Model model,@RequestParam("articleId") String articleId) {
+		ArticleVO artVO = artService.getArtById(articleId);
+		model.addAttribute("artVO", artVO);
+		String tagStr = artVO.getTags();
+		String[] tagArr = tagStr.split(",");
+		model.addAttribute("tagArr", tagArr);
+		List<CommentVO> commList = commService.queryCommByArtId(articleId);
+		model.addAttribute("commSize", commList.size());
+		model.addAttribute("commList", commList);
+		return "mooddetails";
 	}
 	
 	/**
@@ -118,7 +138,7 @@ public class ArticleController {
 	public @ResponseBody PageInfo<ArticleVO> list(@RequestParam("pageNum") String pageNumStr) {
 		int pageNum = Integer.parseInt(pageNumStr);
 		int pageSize = 10;
-		PageInfo<ArticleVO> pageInfo = artService.articlePage(pageNum, pageSize);
+		PageInfo<ArticleVO> pageInfo = artService.articlePage(pageNum, pageSize,MyBlogConstant.ARTICLE_TYPE_EXP);
 		return pageInfo;
 	}
 }

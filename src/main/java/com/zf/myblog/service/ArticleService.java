@@ -10,10 +10,13 @@ import com.zf.myblog.entity.ArticleVO;
  */
 public interface ArticleService {
 	/**
-	 * 首页加载文章列表
+	 * 加载文章
+	 * @param pageNum
+	 * @param pageSize
+	 * @param artType 文章类型：0-技术类；1-随笔
 	 * @return
 	 */
-	public PageInfo<ArticleVO> articlePage(Integer pageNum, Integer pageSize);
+	public PageInfo<ArticleVO> articlePage(Integer pageNum, Integer pageSize,String artType);
 	
 	/**
 	 * 文章热度排行Top5

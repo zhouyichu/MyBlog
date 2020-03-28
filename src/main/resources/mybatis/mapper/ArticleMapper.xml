@@ -20,7 +20,7 @@
 	<!-- 文章分页查询 -->
 	<select id="articlePage" resultType="com.zf.myblog.entity.ArticleVO">
 		<include refid="queryArticleField" />
-		where art_type='0' order by create_time desc
+		where art_type=#{artType} order by create_time desc
 	</select>
 	
 	

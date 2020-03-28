@@ -19,13 +19,15 @@
 			
 			<div class="col-md-8 col-md-offset-2 note-container">
 				<div id="note-content">
+					<#list data as item>
 	                <div class="portlet content-submodel">
-	                    <h4 class="content-title"><a href="article/details?articleId=1" target="_blank">甜甜的你</a></h4>
-	                    <p class="content-gist">你爱过头居然答应我，要给我蜂蜜口味的生活。你的爱太多，想随身带走，想你的时候就吃上一口你爱过头居然答应我，要给我蜂蜜口味的生活。你的爱太多，想随身带走，想你的时候就吃上一口你爱过头居然答应我，要给我蜂蜜口味的生活。你的爱太多，想随身带走，想你的时候就吃上一口你爱过头居然答应我，要给我蜂蜜口味的生活。你的爱太多，想随身带走，想你的时候就吃上一口.....</p>
+	                    <h4 class="content-title"><a href="article/mood/details?articleId=${item.articleId}" target="_blank">${item.title}</a></h4>
+	                    <p class="content-gist">${item.intro}</p>
 	                    <div class="content-foot">
-	                        <ul class="list-inline"><li>阅读数：3212</li><li>发布时间：2020-03-28 15:26:06</li>
+	                        <ul class="list-inline"><li>阅读数：${item.readTime}</li><li>发布时间：${item.createTime}</li>
 	                    </div>
 	                </div>
+	                </#list>
 				</div>
 			</div>
 		</div>

@@ -6,7 +6,7 @@ import com.zf.myblog.entity.ArticleVO;
 
 @Repository
 public interface ArticleMapper {
-	public List<ArticleVO> articlePage();
+	public List<ArticleVO> articlePage(String artType);
 	
 	public List<ArticleVO> hotTopArt();
 	

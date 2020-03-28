@@ -1,5 +1,6 @@
 package com.zf.myblog.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.util.StringUtil;
+import com.zf.myblog.common.MyBlogConstant;
 import com.zf.myblog.entity.ArticleVO;
 import com.zf.myblog.mapper.ArticleMapper;
 import com.zf.myblog.service.ArticleService;
@@ -19,9 +21,14 @@ public class ArticleServiceImpl implements ArticleService {
 	private ArticleMapper artMapper;
 
 	@Override
-	public PageInfo<ArticleVO> articlePage(Integer pageNum, Integer pageSize) {
+	public PageInfo<ArticleVO> articlePage(Integer pageNum, Integer pageSize,String artType) {
 		PageHelper.startPage(pageNum, pageSize);
-		List<ArticleVO> articleList = artMapper.articlePage();
+		List<ArticleVO> articleList = new ArrayList<ArticleVO>();
+		if(MyBlogConstant.ARTICLE_TYPE_EXP.equals(artType)) {//技术类
+			articleList = artMapper.articlePage(MyBlogConstant.ARTICLE_TYPE_EXP);
+		}else {//随笔类
+			articleList = artMapper.articlePage(MyBlogConstant.ARTICLE_TYPE_MOOD);
+		}
 		PageInfo<ArticleVO> pageInfo = new PageInfo<ArticleVO>(articleList);
 		return pageInfo;
 	}

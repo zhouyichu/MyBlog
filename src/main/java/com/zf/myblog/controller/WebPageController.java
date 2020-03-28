@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageInfo;
+import com.zf.myblog.common.MyBlogConstant;
 import com.zf.myblog.entity.ArticleVO;
 import com.zf.myblog.entity.MessageVO;
 import com.zf.myblog.service.ArticleService;
@@ -26,7 +27,7 @@ public class WebPageController {
 	@RequestMapping(value = "/")
 	public String index(Model model) {
 		//获取所有文章（第一页）
-		PageInfo<ArticleVO> pageInfo = articleService.articlePage(1, 10);
+		PageInfo<ArticleVO> pageInfo = articleService.articlePage(1, 10,MyBlogConstant.ARTICLE_TYPE_EXP);
 		PageInfo<ArticleVO> hotPageInfo = articleService.hotTopArt(1, 5);
 		model.addAttribute("data", pageInfo.getList());
 		model.addAttribute("hotData", hotPageInfo.getList());
@@ -40,6 +41,8 @@ public class WebPageController {
 	
 	@RequestMapping(value = "/moodnote")
 	public String moodnote(Model model) {
+		PageInfo<ArticleVO> pageInfo = articleService.articlePage(1, 10,MyBlogConstant.ARTICLE_TYPE_MOOD);
+		model.addAttribute("data", pageInfo.getList());
 		return "moodnote";
 	}
 	

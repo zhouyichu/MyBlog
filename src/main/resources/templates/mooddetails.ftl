@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta charset="UTF-8">
-		<title>文章详情</title>
+		<title>心情随笔|文章详情</title>
 		<link id="link-icon" rel="shortcut icon" href="${request.contextPath}/static/image/MyBlog-logo-black.png" type="image/x-icon">
 	</head>
 	<style>
@@ -13,27 +13,14 @@
 		}
 	</style>
 	<body>
-		<!-- begin background void -->
-		<div class="vidage">
-		  <video id="vidage" class="vidage-video" preload="metadata" loop autoplay muted>
-		    <source src="${request.contextPath}/static/media/indexbg.mp4" type="video/mp4">
-		  </video>
-		</div>
-		<!-- end background void -->
 		<#include "/hand.ftl">
 		<!-- ref css file -->
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/css/details.css" rel="stylesheet" type="text/css" />
 		<div class="container-fluid">
 			<div class="row">
-				<!-- begin profile -->
-				<div class="col-md-2 col-md-offset-1">
-					<#include "/left.ftl">
-				</div>
-				<!-- end profile -->
 				<!-- begin content -->
-				<div class="col-md-6 blog-content-2">
+				<div class="col-md-6 col-md-offset-3 blog-content-2">
 	                <div class="blog-single-content bordered blog-container">
                         <div class="blog-single-head">
                             <h1 class="blog-single-head-title">${artVO.title}</h1>
@@ -50,7 +37,7 @@
                             ${artVO.content}
                         </div>
                         <div class="blog-single-foot">
-                        	<#if tagArr?? && (tagArr?size > 0)>
+                            <#if tagArr?? && (tagArr?size > 0)>
                             <ul class="blog-post-tags">
                             	<#list tagArr as tag>
                                 <li>
@@ -92,9 +79,6 @@
                         </div>
                     </div>
 				</div>
-				<div class="col-md-2">
-					<#include "/right.ftl">
-				</div>
 			</div>
 		</div>
 		<!-- end content -->
@@ -104,7 +88,6 @@
 		<script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
 	</body>
 </html>
