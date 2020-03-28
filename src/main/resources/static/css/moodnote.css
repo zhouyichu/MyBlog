@@ -1,0 +1,46 @@
+.mood-head{
+	height: 300px;
+    background-image: url(../image/mood-note-bg.jpg);
+    background-position: center;
+    margin: 0 -20px;
+	text-align: center;
+}
+.mood-head-content{
+	height: 300px;
+    background: #00000069;
+}
+.mood-head-content>h1{
+    font-weight: 600;
+	margin-top:100px;
+}
+.mood-head-content>h2{
+	font-size: 22px;
+    font-weight: 400;
+    margin-top: 30px;
+	letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/**
+ * 内容
+ */
+.note-container{
+	margin-top:45px;
+}
+#note-content>.portlet{
+	background-color:transparent;
+}
+#note-content>.portlet>.content-title>a{
+	color:#fff;
+}
+#note-content>.content-submodel{
+	border: 1px solid;
+    padding: 0px 15px;
+}
+#note-content>.content-submodel>.content-gist{
+	margin:10px 0;
+}
+#note-content>.content-submodel>.content-title{
+	border-bottom: 1px dashed #ffffff70;
+    padding-bottom: 10px;
+}

@@ -11,7 +11,8 @@
 		content as content,
 		tags as tags,
 		read_time as readTime,
-		create_time as createTime
+		create_time as createTime,
+		art_type as artType
 		from
 		myblog_article
 	</sql>
@@ -19,8 +20,16 @@
 	<!-- 文章分页查询 -->
 	<select id="articlePage" resultType="com.zf.myblog.entity.ArticleVO">
 		<include refid="queryArticleField" />
-		order by create_time desc
+		where art_type='0' order by create_time desc
 	</select>
+	
+	
+	<!-- 热度排行Top5查询 -->
+	<select id="hotTopArt" resultType="com.zf.myblog.entity.ArticleVO">
+		<include refid="queryArticleField" />
+		where art_type='0' order by read_time desc, create_time desc
+	</select>
+	
 
 	<!-- 文章按标签分页查询 -->
 	<select id="articlePageByTag"
@@ -31,7 +40,7 @@
 				tags like CONCAT('%',#{tag},'%')
 			</if>
 		</where>
-		order by create_time desc
+		where art_type='0' order by create_time desc
 	</select>
 	
 	<!-- 通过ID查询文章 -->
@@ -40,15 +49,39 @@
 		where articleId = #{artId}
 	</select>
 	
-	
+	<!-- 新增文章 -->
 	<insert id="saveArt">
 		INSERT INTO myblog_article (
-			articleId,title,intro,content,tags,read_time,create_time
+			articleId,title,intro,content,tags,read_time,create_time,art_type
 		)VALUES(
-			#{articleId},#{title},#{intro},#{content},#{tags},#{readTime},sysdate()
+			#{articleId},#{title},#{intro},#{content},#{tags},#{readTime},sysdate(),#{artType}
 		)
 	</insert>
 	
+	<!-- 修改文章数据 -->
+	<update id="updateArt">
+		update myblog_article
+		<set>
+			<if test="title!='' and title!=null">
+				title = #{title},
+			</if>
+			<if test="intro!='' and intro!=null">
+				intro = #{intro},
+			</if>
+			<if test="content!='' and content!=null">
+				content = #{content},
+			</if>
+			<if test="tags!='' and tags!=null">
+				tags = #{tags},
+			</if>
+			<if test="artType!='' and artType!=null">
+				art_type = #{artType},
+			</if>
+		</set>
+		where articleId =#{articleId}
+	</update>
+	
+	<!-- 修改文章阅读次数 -->
 	<update id="updateReadTimeById">
 		update myblog_article set read_time=#{readTime} where articleId = #{articleId}
 	</update>

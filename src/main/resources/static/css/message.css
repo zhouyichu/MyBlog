@@ -43,6 +43,37 @@ body{
 	border-bottom: 1px solid #ffffff8f;
     padding: 10px;
 }
+#btn-submit{
+	width:100%;
+	text-align: center;
+    margin-top: 15px;
+}
+
+
+/**
+ * 优化校验样式
+ */
+.has-feedback i{
+    top: 8px;
+}
+
+.has-feedback .help-block{
+	color: #f35451;
+}
+
+
+/**
+ * 弹框字体颜色修改
+ */
+.sweet-alert>h2{
+	color:#000000;
+}
+.btn-primary{
+	background-color:#1c699f;
+}
+
+
+
 // set the fallback-cover image
 $vdg-fallback-image: url('static/images/fallback.jpg');
 

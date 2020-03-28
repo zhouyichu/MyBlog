@@ -25,6 +25,14 @@ public class ArticleServiceImpl implements ArticleService {
 		PageInfo<ArticleVO> pageInfo = new PageInfo<ArticleVO>(articleList);
 		return pageInfo;
 	}
+	
+	@Override
+	public PageInfo<ArticleVO> hotTopArt(Integer pageNum, Integer pageSize) {
+		PageHelper.startPage(pageNum, pageSize);
+		List<ArticleVO> articleList = artMapper.hotTopArt();
+		PageInfo<ArticleVO> pageInfo = new PageInfo<ArticleVO>(articleList);
+		return pageInfo;
+	}
 
 	@Override
 	public ArticleVO getArtById(String artId) {
@@ -50,6 +58,12 @@ public class ArticleServiceImpl implements ArticleService {
 			artVO.setReadTime("0");
 		}
 		int res = artMapper.saveArt(artVO);
+		return res;
+	}
+
+	@Override
+	public int updateArt(ArticleVO artVO) {
+		int res = artMapper.updateArt(artVO);
 		return res;
 	}
 }

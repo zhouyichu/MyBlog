@@ -5,33 +5,6 @@
 	    <meta charset="UTF-8">
 		<title>编辑文章</title>
 		<link id="link-icon" rel="shortcut icon" href="${request.contextPath}/static/image/MyBlog-logo-black.png" type="image/x-icon">
-		<link href="${request.contextPath}/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/metronic/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/metronic/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
-		<link href="${request.contextPath}/static/css/edit.css" rel="stylesheet" type="text/css" />
-		
-	    <script type="text/javascript" src="${request.contextPath}/static/jQuery.js"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
-	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
-	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js" type="text/javascript"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
-	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
-	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
-	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
-        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
-        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
-        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/lang/summernote-zh-CN.min.js" type="text/javascript"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/js/edit.js"></script>
 	</head>
 	<body>
 		<!-- begin background void -->
@@ -41,19 +14,17 @@
 		  </video>
 		</div>
 		<!-- end background void -->
-		<!-- begin navigation bar -->
-		<div class="navbar-collapse collapse">
-		    <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">首页</a></li>
-		        <li><a href="#">心情随笔</a></li>
-		        <li><a href="#">技术分享</a></li>
-		        <li><a href="#">资源下载</a></li>
-		        <li><a href="#">项目合作</a></li>
-		        <li><a href="#">留言板</a></li>
-		        <li><a href="#">关于我</a></li>
-		    </ul>
-		</div>
-		<!-- end navigation bar -->
+		<#include "/hand.ftl">
+		<!-- ref css file -->
+		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/metronic/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/css/edit.css" rel="stylesheet" type="text/css" />
 		<div class="container-fluid">
 			<div class="row">
 				<!-- begin profile -->
@@ -126,6 +97,27 @@
                                         <label class="control-label col-md-2">标题 <span>*</span></label>
                                         <div class="col-md-10">
                                             <input type="text" id="title" name="title" class="form-control" placeholder="请输入文章标题" value="${(artVO.title)!''}"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">文章类型 <span>*</span></label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="artType" id="artType">
+                                            	<#if (artVO.articleId)??>
+                                            		<#if artVO.artType=="0">
+	                                            	<option value="0" selected>技术分享</option>
+	                                            	<option value="1">心情随笔</option>
+	                                            	<#else>
+	                                            	<option value="0">技术分享</option>
+	                                            	<option value="1" selected>心情随笔</option>
+	                                            	</#if>
+	                                            	<input id="isNew" value="1" type="hidden"/>
+			                                    <#else>
+			                                    	<option value="0" selected>技术分享</option>
+	                                            	<option value="1">心情随笔</option>
+	                                            	<input id="isNew" value="0" type="hidden"/>
+			                                    </#if>
+                                            </select>
                                         </div>
                                     </div>
                                 	<div class="form-group">
@@ -203,13 +195,19 @@
 			</div>
 		</div>
 		<!-- end content -->
-		<!-- begin foot -->
-		<div class="navbar navbar-static-bottom">
-		    <div class="navbar-nav">
-		    	<p>Copyright © 2020 Newbe36524</p>
-				<p>Powered by .NET Core on Kubernetes</p>
-		    </div>
-		</div>
-		<!-- end foot -->		
+		<#include "/foot.ftl">
+		<!-- ref js file -->
+		<script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js" type="text/javascript"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+	    <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+        <script src="${request.contextPath}/static/plugins/bootstrap/bootstrap-summernote/lang/summernote-zh-CN.min.js" type="text/javascript"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/js/edit.js"></script>
 	</body>
 </html>

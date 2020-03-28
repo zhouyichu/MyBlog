@@ -5,30 +5,10 @@
 	    <meta charset="UTF-8">
 		<title>关于我|about me</title>
 		<link id="link-icon" rel="shortcut icon" href="static/image/MyBlog-logo-black.png" type="image/x-icon">
-		<link href="static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/plugins/metronic/global/components.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/plugins/metronic/page/blog.min.css" rel="stylesheet" type="text/css" />
-		<link href="static/css/aboutme.css" rel="stylesheet" type="text/css" />
-		
-	    <script type="text/javascript" src="static/jQuery.js"></script>
-	    <script type="text/javascript" src="static/plugins/bootstrap/js/bootstrap.min.js"></script>
-	    <script type="text/javascript" src="static/plugins/bgstretcher/jquery.backstretch.min.js"></script>
-	    <script type="text/javascript" src="static/js/aboutme.js"></script>
 	</head>
 	<body>
-		<!-- begin navigation bar -->
-		<div class="navbar-collapse collapse">
-		    <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">首页</a></li>
-		        <li><a href="#">心情随笔</a></li>
-		        <li><a href="#">技术分享</a></li>
-		        <li><a href="#">资源下载</a></li>
-		        <li><a href="#">项目合作</a></li>
-		        <li><a href="#">留言板</a></li>
-		        <li><a href="#">关于我</a></li>
-		    </ul>
-		</div>
-		<!-- end navigation bar -->
+		<#include "/hand.ftl">
+		<link href="static/css/aboutme.css" rel="stylesheet" type="text/css" />
 		<!-- begin content -->
 		<div class="container-fluid">
 			<div class="row">
@@ -254,13 +234,8 @@
 			</div>
 		</div>
 		<!-- end content -->
-		<!-- begin foot -->
-		<div class="navbar navbar-static-bottom">
-		    <div class="navbar-nav">
-		    	<p>Copyright © 2020 Newbe36524</p>
-				<p>Powered by .NET Core on Kubernetes</p>
-		    </div>
-		</div>
-		<!-- end foot -->
+		<#include "/foot.ftl">
 	</body>
+	<script type="text/javascript" src="static/plugins/bgstretcher/jquery.backstretch.min.js"></script>
+	<script type="text/javascript" src="static/js/aboutme.js"></script>
 </html>

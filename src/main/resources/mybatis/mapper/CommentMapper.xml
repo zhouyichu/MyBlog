@@ -14,6 +14,18 @@
 			from
 				myblog_comment c
 	</sql>
+	
+	<!-- 查询留言表字段 -->
+	<sql id="queryMsgField">
+		select  m.msg_id as msgId,
+				m.msg_account as account,
+				m.msg_email as email,
+				m.msg_content as content,
+				m.msg_status as status,
+				m.create_time as createTime
+			from
+				myblog_message m
+	</sql>
 
 	<!-- 通过文章ID查询评论 -->
 	<select id="queryCommByArtId" resultType="com.zf.myblog.entity.CommentVO">
@@ -26,6 +38,11 @@
 		order by c.create_time desc
 	</select>
 	
+	<!-- 留言分页查询 -->
+	<select id="msgPage" resultType="com.zf.myblog.entity.MessageVO">
+		<include refid="queryMsgField" />
+		order by m.create_time desc
+	</select>
 	
 	<!-- 新增评论 -->
 	<insert id="insertComm">
@@ -33,6 +50,15 @@
 			com_id, article_id, account, email, com_content, create_time, status
 		)VALUES(
 			#{commId},#{artId},#{account},#{email},#{content},sysdate(),0
+		)
+	</insert>
+	
+	<!--新增留言-->
+	<insert id="insertMsg">
+		INSERT INTO myblog_message(
+			msg_id,msg_account,msg_email,msg_content,msg_status,create_time
+		)VALUES(
+			#{msgId},#{account},#{email},#{content},0,sysdate()
 		)
 	</insert>
 </mapper>

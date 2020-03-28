@@ -8,9 +8,13 @@ import com.zf.myblog.entity.ArticleVO;
 public interface ArticleMapper {
 	public List<ArticleVO> articlePage();
 	
+	public List<ArticleVO> hotTopArt();
+	
 	public ArticleVO getArtById(String artId);
 	
 	public int saveArt(ArticleVO artVO);
+	
+	public int updateArt(ArticleVO artVO);
 	
 	public int updateReadTimeById(ArticleVO artVO);
 }

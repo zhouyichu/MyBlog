@@ -8,6 +8,13 @@ public class ArticleVO {
 	private String tags;//标签
 	private String readTime;//阅读次数
 	private String createTime;//创建时间
+	private String artType;
+	public String getArtType() {
+		return artType;
+	}
+	public void setArtType(String artType) {
+		this.artType = artType;
+	}
 	public String getArticleId() {
 		return articleId;
 	}
@@ -51,7 +58,7 @@ public class ArticleVO {
 		this.createTime = createTime;
 	}
 	public ArticleVO(String articleId, String title, String intro, String content, String tags, String readTime,
-			String createTime) {
+			String createTime, String artType) {
 		super();
 		this.articleId = articleId;
 		this.title = title;
@@ -60,6 +67,7 @@ public class ArticleVO {
 		this.tags = tags;
 		this.readTime = readTime;
 		this.createTime = createTime;
+		this.artType = artType;
 	}
 	public ArticleVO() {
 		super();

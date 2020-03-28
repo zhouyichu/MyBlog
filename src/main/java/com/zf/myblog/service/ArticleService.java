@@ -16,6 +16,14 @@ public interface ArticleService {
 	public PageInfo<ArticleVO> articlePage(Integer pageNum, Integer pageSize);
 	
 	/**
+	 * 文章热度排行Top5
+	 * @param pageNum
+	 * @param pageSize
+	 * @return
+	 */
+	public PageInfo<ArticleVO> hotTopArt(Integer pageNum, Integer pageSize);
+	
+	/**
 	 * 通过ID获取文章信息
 	 * @param artId 文章ID
 	 * @return 文章信息对象
@@ -28,4 +36,11 @@ public interface ArticleService {
 	 * @return
 	 */
 	public int saveArt(ArticleVO artVO);
+	
+	/**
+	 * 修改文章
+	 * @param artVO
+	 * @return
+	 */
+	public int updateArt(ArticleVO artVO);
 }

@@ -46,6 +46,10 @@ public class ArticleController {
 		List<CommentVO> commList = commService.queryCommByArtId(articleId);
 		model.addAttribute("commSize", commList.size());
 		model.addAttribute("commList", commList);
+		PageInfo<ArticleVO> pageInfo = artService.articlePage(1, 10);
+		PageInfo<ArticleVO> hotPageInfo = artService.hotTopArt(1, 5);
+		model.addAttribute("data", pageInfo.getList());
+		model.addAttribute("hotData", hotPageInfo.getList());
 		return "details";
 	}
 	
@@ -77,6 +81,8 @@ public class ArticleController {
 		String tags = request.getParameter("tags");
 		String artId = request.getParameter("artId");
 		String readTime = request.getParameter("readTime");
+		String artType=request.getParameter("artType");
+		String isNew = request.getParameter("isNew");
 		ArticleVO artVO = new ArticleVO();
 		artVO.setTitle(title);
 		artVO.setIntro(summary);
@@ -88,7 +94,17 @@ public class ArticleController {
 		if(!StringUtil.isEmpty(readTime)) {
 			artVO.setReadTime(readTime);
 		}
-		int res = artService.saveArt(artVO);
+		if(!"0".equals(artType)) {
+			artVO.setArtType("1");//随笔
+		}else {
+			artVO.setArtType("0");//技术类
+		}
+		int res = 0;
+		if("0".equals(isNew)) {//新增
+			res = artService.saveArt(artVO);
+		}else {
+			res = artService.updateArt(artVO);
+		}
 		return res;
 	}
 	

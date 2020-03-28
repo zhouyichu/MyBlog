@@ -1,0 +1,33 @@
+body{
+	background-color:#364150;
+	color:#fff;
+	margin:0;
+	padding:0
+}
+.nav>li{
+	margin:5px 10px;
+	font-size:15px;
+}
+.nav>li>a{
+	color:#FFF;
+}
+.nav>li>a:hover,.nav>li>a:visited,.nav>li>a:active,.nav>li>a:focus{
+	background:none !important;
+}
+.navbar-collapse{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-collapse>.navbar-nav{
+	display: inline-block;
+	float: none;
+	margin-top:2em;
+}
+.navbar-static-bottom{
+	text-align: center;
+	padding-bottom:20px !important;
+}
+.navbar-static-bottom>.navbar-nav{
+	display: inline-block;
+	float: none;
+}

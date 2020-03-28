@@ -1,7 +1,8 @@
 body{
 	position:absolute;
 	color:#fff;
-	background-image:url("../image/fallback.jpg");
+	background:url("../image/fallback.jpg") no-repeat;
+	background-size:100% 100%;
 	z-index:-2;
 	background-attachment: fixed;
 }

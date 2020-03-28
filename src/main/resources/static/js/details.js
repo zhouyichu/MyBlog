@@ -31,7 +31,7 @@ var submitComm = function(){
                 success: function (data) {
 					if(data>0){
 						swal({
-							title:"您已成功评论，正在审核中",
+							title:"您已成功评论，正在审核中...",
 							type:"info",
 							confirmButtonColor: "#DD6B55",
 							confirmButtonText: "确认"

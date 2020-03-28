@@ -55,6 +55,8 @@ var submintForm = function(){
 			param.tags = tags;
 			param.artId = $("#artId").val();
 			param.readTime=$("#readTime").val();
+			param.isNew=$("#isNew").val();//0-新增；1-修改
+			param.artType=$("#artType").val();
 			$.ajax({
 				url:"save",
 				type:"POST",
@@ -169,12 +171,12 @@ var formValidator = function(){
 			title: {
 				validators: {
 					notEmpty: {
-						message: '用户名不能为空'
+						message: '标题不能为空'
 					},
 					stringLength: {
 						min: 1,
 						max: 50,
-						message: '标题长度为1-15'
+						message: '标题长度为1-50'
 					}
 				}
 			},
