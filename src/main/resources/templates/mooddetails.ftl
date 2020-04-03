@@ -85,9 +85,10 @@
 		<#include "/foot.ftl">
 		
 		<!-- ref js file -->
+		<script type="text/javascript" src="${request.contextPath}/static/plugins/bgstretcher/jquery.backstretch.min.js"></script>
 		<script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-validator/bootstrapValidator.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
-	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/js/mooddetails.js"></script>
 	</body>
 </html>
