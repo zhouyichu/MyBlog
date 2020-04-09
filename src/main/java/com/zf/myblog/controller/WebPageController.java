@@ -1,7 +1,9 @@
 package com.zf.myblog.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +11,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.github.pagehelper.PageInfo;
 import com.zf.myblog.common.MyBlogConstant;
 import com.zf.myblog.entity.ArticleVO;
 import com.zf.myblog.entity.MessageVO;
 import com.zf.myblog.service.ArticleService;
 import com.zf.myblog.service.CommentService;
+import com.zf.myblog.utils.AddressUtils;
 
 @Controller
 public class WebPageController {
@@ -76,5 +81,21 @@ public class WebPageController {
 	@RequestMapping(value = "/hand")
 	public String hand() {
 		return "hand";
+	}
+	
+	@RequestMapping(value = "/iptest")
+	public @ResponseBody String iptest(HttpServletRequest request) {
+		String ip = AddressUtils.getIpAddress(request);
+		String address = "";
+        try {
+            address = AddressUtils.getAddresses(ip);
+        }
+        catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        JSONArray jsonArray = JSON.parseArray(address);
+        String region = jsonArray.getString(1);
+        String city = jsonArray.getString(2);
+		return ip+"   "+region+"-"+city;
 	}
 }

@@ -39,6 +39,10 @@ body{
 	background-color: #ffffff3b;
     padding: 25px;
 }
+#message-content>.media>.media-body>.media-heading>.caption-helper{
+	font-size: 10px;
+    color: #d9ffffad;
+}
 .media-body{
 	border-bottom: 1px solid #ffffff8f;
     padding: 10px;

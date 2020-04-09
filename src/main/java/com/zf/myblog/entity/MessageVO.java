@@ -10,6 +10,8 @@ public class MessageVO {
 	private String account;
 	private String email;
 	private String content;
+	private String userIp;
+	private String userAddr;
 	private String status;
 	private String createTime;
 	public String getMsgId() {
@@ -36,6 +38,18 @@ public class MessageVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public String getUserIp() {
+		return userIp;
+	}
+	public void setUserIp(String userIp) {
+		this.userIp = userIp;
+	}
+	public String getUserAddr() {
+		return userAddr;
+	}
+	public void setUserAddr(String userAddr) {
+		this.userAddr = userAddr;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -48,16 +62,19 @@ public class MessageVO {
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
-	public MessageVO(String msgId, String account, String email, String content, String status, String createTime) {
+	public MessageVO() {
+		super();
+	}
+	public MessageVO(String msgId, String account, String email, String content, String userIp, String userAddr,
+			String status, String createTime) {
 		super();
 		this.msgId = msgId;
 		this.account = account;
 		this.email = email;
 		this.content = content;
+		this.userIp = userIp;
+		this.userAddr = userAddr;
 		this.status = status;
 		this.createTime = createTime;
-	}
-	public MessageVO() {
-		super();
 	}
 }

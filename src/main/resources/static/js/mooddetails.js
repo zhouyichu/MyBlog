@@ -29,7 +29,7 @@ var submitComm = function(){
 			param.email = $("#email").val();
 			param.content = $("#content").val();
 			$.ajax({
-				url:"../comment/add",
+				url:"../../comment/add",
 				type:"post",
 				data: param,  //传入组装的参数
                 dataType: "json",

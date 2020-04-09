@@ -77,7 +77,7 @@ var loadMsgPageData = function(pageNum){
 				html+="<div class=\"media\">";
 				html+="<div class=\"media-body\">";
 				html+="<h4 class=\"media-heading\">";
-				html+="<span class=\"text-info\">"+item.account+"</span> 于";
+				html+="<span class=\"text-info\">"+item.account+"</span><span class=\"caption-helper\">["+item.userAddr+"]</span> 于";
 				html+="<span class=\"c-date\">"+item.createTime+"</span>";
 				html+="</h4>"+item.content+"</div></div>";
 			});

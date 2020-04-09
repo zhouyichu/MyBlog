@@ -24,6 +24,12 @@
 		<!-- ref css file -->
 		<link href="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/plugins/vidage/vidage.css" rel="stylesheet" type="text/css" />
+		<link href="${request.contextPath}/static/plugins/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css"/>
+		<link href="${request.contextPath}/static/plugins/codemirror/theme/ambiance.css" rel="stylesheet" type="text/css"/>
+        <link href="${request.contextPath}/static/plugins/codemirror/theme/neat.css" rel="stylesheet" type="text/css" />
+        <link href="${request.contextPath}/static/plugins/codemirror/theme/ambiance.css" rel="stylesheet" type="text/css" />
+        <link href="${request.contextPath}/static/plugins/codemirror/theme/material.css" rel="stylesheet" type="text/css" />
+        <link href="${request.contextPath}/static/plugins/codemirror/theme/neo.css" rel="stylesheet" type="text/css" />
 		<link href="${request.contextPath}/static/css/details.css" rel="stylesheet" type="text/css" />
 		<div class="container-fluid">
 			<div class="row">
@@ -105,6 +111,17 @@
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/bootstrap/bootstrap-sweetalert/sweetalert.min.js"></script>
 	    <script type="text/javascript" src="${request.contextPath}/static/plugins/vidage/vidage.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/lib/codemirror.js"></script>
+	    <!-- 代码高亮 -->
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/mode/javascript/javascript.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/mode/css/css.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/mode/clike/clike.js"></script>
+	    <!-- 支持代码折叠
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/addon/fold/foldcode.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/addon/fold/foldgutter.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/addon/fold/brace-fold.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/plugins/codemirror/addon/fold/comment-fold.js"></script> -->
 	    <script type="text/javascript" src="${request.contextPath}/static/js/details.js"></script>
 	</body>
 </html>

@@ -21,6 +21,8 @@
 				m.msg_account as account,
 				m.msg_email as email,
 				m.msg_content as content,
+				m.user_ip as userIp,
+				m.user_addr as userAddr,
 				m.msg_status as status,
 				m.create_time as createTime
 			from
@@ -56,9 +58,9 @@
 	<!--新增留言-->
 	<insert id="insertMsg">
 		INSERT INTO myblog_message(
-			msg_id,msg_account,msg_email,msg_content,msg_status,create_time
+			msg_id,msg_account,msg_email,msg_content,user_ip,user_addr,msg_status,create_time
 		)VALUES(
-			#{msgId},#{account},#{email},#{content},0,sysdate()
+			#{msgId},#{account},#{email},#{content},#{userIp},#{userAddr},0,sysdate()
 		)
 	</insert>
 </mapper>

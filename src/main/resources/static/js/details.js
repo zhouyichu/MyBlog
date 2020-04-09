@@ -7,6 +7,8 @@ $(function(){
 	});
 	//提交表单
 	submitComm();
+	
+	CodeMirrorCodeEditors.init();
 });
 
 /**
@@ -119,3 +121,44 @@ var formValidator = function(){
 		}
 	});
 }
+
+
+
+var CodeMirrorCodeEditors = function () {
+    return {
+        init: function () {
+			var textAreaArr = document.getElementsByTagName('textarea');
+			for(var i=0;i<textAreaArr.length;i++){
+				if(textAreaArr[i].id!=undefined){
+					var idVal = textAreaArr[i].id;
+					if(idVal.indexOf("java-code")>=0){
+						var myCodeMirror = CodeMirror.fromTextArea(textAreaArr[i], {
+				            lineNumbers: true,
+				            matchBrackets: true,
+				            styleActiveLine: true,
+				            mode: 'text/x-java',
+				            readOnly: true
+				        }); 
+					}else if(idVal.indexOf("javascript-code")>=0){
+						var myCodeMirror = CodeMirror.fromTextArea(textAreaArr[i], {
+				            lineNumbers: true,
+				            matchBrackets: true,
+				            styleActiveLine: true,
+				            theme:"ambiance",
+				            mode: 'javascript'
+				        });
+					}else if(idVal.indexOf("css-code")>=0){
+						var myCodeMirror = CodeMirror.fromTextArea(textAreaArr[i], {
+				            lineNumbers: true,
+				            matchBrackets: true,
+				            styleActiveLine: true,
+				            theme:"ambiance",
+				            mode: 'css',
+				            readOnly: true
+				        }); 
+					}
+				}
+			}
+        }
+    };
+}();

@@ -53,7 +53,7 @@ public class CommentController {
 		msgVO.setAccount(account);
 		msgVO.setEmail(email);
 		msgVO.setContent(content);
-		int res = commService.insertMsg(msgVO);
+		int res = commService.insertMsg(request,msgVO);
 		return res;
 	}
 }

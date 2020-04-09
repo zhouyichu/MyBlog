@@ -2,6 +2,8 @@ package com.zf.myblog.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.github.pagehelper.PageInfo;
 import com.zf.myblog.entity.CommentVO;
 import com.zf.myblog.entity.MessageVO;
@@ -27,7 +29,7 @@ public interface CommentService {
 	 * @param msgVO
 	 * @return
 	 */
-	public int insertMsg(MessageVO msgVO);
+	public int insertMsg(HttpServletRequest request,MessageVO msgVO);
 	
 	/**
 	 * 留言分页
