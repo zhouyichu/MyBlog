@@ -19,7 +19,7 @@
         	<#list data as time>
             	<#assign n=n+1>
             	<#if n<=5>
-			    	<li class="list-group-item"><a href="article/details?articleId=${time.articleId}">${time.title}</a></li>
+			    	<li class="list-group-item"><a href="${request.contextPath}/article/details?articleId=${time.articleId}">${time.title}</a></li>
 			    </#if>
 		    </#list>
 		</ul>
@@ -32,7 +32,7 @@
     <div class="portlet-body">
         <ul class="list-group">
         	<#list hotData as hot>
-		    	<li class="list-group-item"><a href="article/details?articleId=${hot.articleId}">${hot.title}</a></li>
+		    	<li class="list-group-item"><a href="${request.contextPath}/article/details?articleId=${hot.articleId}">${hot.title}</a></li>
 		    </#list>
 		</ul>
     </div>

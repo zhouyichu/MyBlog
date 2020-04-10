@@ -59,6 +59,9 @@ body{
 .c-comment-list>.media>.media-body{
 	padding-bottom:15px;
 }
+.blog-content-2 .blog-single-content>.blog-single-desc>p{
+	margin-bottom:15px !important;
+}
 .blog-content-2 .blog-single-content .blog-comments .c-comment-list .media{
 	margin:20px 0;
 }
