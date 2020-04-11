@@ -54,6 +54,7 @@ spring:
 server:
     servlet:
         context-path: /MyBlog
+    port: 8080
     uri-encoding: utf-8
 # mybatis 配置
 mybatis:

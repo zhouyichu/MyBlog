@@ -118,6 +118,18 @@ body{
 .list-group-item>a{
 	color:#ffffffb5;
 }
+/**
+ * 高度自适应
+ */
+.CodeMirror {
+	height: auto;
+}
+
+.CodeMirror-scroll {
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
 
 /**
 工作经验
