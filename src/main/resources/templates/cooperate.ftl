@@ -22,10 +22,14 @@
 						<p>
 							扫码或搜索微信号：<span>younger_zhou415</span>
 						</p>
-						<img src="static/image/book-read.jpg" height="200px" width="200px"/>
+						<img src="static/image/qr_code.jpg" height="200px" width="200px"/>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<!-- ref js file -->
+		<script type="text/javascript" src="${request.contextPath}/static/plugins/bgstretcher/jquery.backstretch.min.js"></script>
+	    <script type="text/javascript" src="${request.contextPath}/static/js/cooperate.js"></script>
 	</body>
 </html>

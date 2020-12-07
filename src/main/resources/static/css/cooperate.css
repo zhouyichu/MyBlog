@@ -1,5 +1,13 @@
-body {
-    background-color: #364150;
+body:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000007a;
+    z-index: -1;
+    min-height: 2400px;
 }
 .portlet.light.cooperate-text{
 	background-color:#ffffff63;

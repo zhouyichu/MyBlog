@@ -155,7 +155,7 @@
                                 <ul class="mt-container">
                                 	<li class="mt-item">
                                         <div class="mt-timeline-icon bg-green-turquoise bg-font-green-turquoise border-grey-steel">
-                                        	<p class="mt-icon-font">7个月</p>
+                                        	<p class="mt-icon-font">1 年</p>
                                         </div>
                                         <div class="mt-timeline-content">
                                             <div class="mt-content-container">
@@ -172,7 +172,7 @@
                                                     <div class="mt-author-notes">2019-07 To 至今</div>
                                                 </div>
                                                 <div class="mt-content border-grey-salt">
-                                                    <p>桑椹电子是一个跨境电子商务公司，主要是在Amazon上卖车灯的。在职期间工作内容包括打通Amazon MWS后台接口，以便高效对接Amazon，基于Amazon ACES服务，开发自动上传产品信息和获取产品报告功能，公司ERP系统的开发、产品申报流程开发等一系列工作。</p>
+                                                    <p>桑椹电子是一家跨境电子商务公司，主要是在Amazon上卖汽配产品。在职期间工作内容包括打通Amazon MWS后台接口，以便高效对接Amazon，基于Amazon ACES服务，开发自动上传产品信息和获取产品报告功能，公司ERP系统的开发、产品申报流程开发等一系列工作。</p>
                                                 </div>
                                             </div>
                                         </div>

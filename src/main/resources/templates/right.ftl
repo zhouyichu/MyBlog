@@ -5,7 +5,7 @@
     <div class="portlet-body">
     	<div class="list-datetime bold uppercase" style="font-size:15px;">众志成城，共同战疫，武汉加油！</div>
     	<div class="bulletin-foot">
-            <p class="bulletin-create-time">—— 2019-03-25 18:34:56</p>
+            <p class="bulletin-create-time">—— 2020-03-25 18:34:56</p>
         </div>
     </div>
 </div>
